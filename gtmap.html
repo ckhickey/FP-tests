@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>Leaflet Moving Marker Map</title>
+		<link rel="stylesheet" href="js/leaflet-0/leaflet.css" />
+		<style type="text/css" media="screen">
+		#leafmap {
+			width: 900px;
+			height: 500px;
+			
+		}
+		
+		@font-face {
+			font-family: 'solido_condensedlight';
+			src: url('fonts/solidocondensed-light-webfont.eot');
+			src: url('fonts/solidocondensed-light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/solidocondensed-light-webfont.svg') format('svg'), url('fonts/solidocondensed-light-webfont.woff') format('woff'), url('fonts/solidocondensed-light-webfont.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'solido_compressedbold';
+			src: url('fonts/solidocompressed-bold-webfont.eot');
+			src: url('fonts/solidocompressed-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/solidocompressed-bold-webfont.svg') format('svg'), url('fonts/solidocompressed-bold-webfont.woff') format('woff'), url('fonts/solidocompressed-bold-webfont.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'solidoblack';
+			src: url('fonts/solido-black-webfont-webfont.eot');
+			src: url('fonts/solido-black-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('..fonts/solido-black-webfont-webfont.svg') format('svg'), url('fonts/solido-black-webfont-webfont.woff') format('woff'), url('fonts/solido-black-webfont-webfont.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'tiempostext-medium';
+			src: url('fonts/tiemposweblf-regular.eot');
+			src: url('fonts/tiempostext-medium-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/tiempostext-medium-webfont.svg') format('svg'), url('fonts/tiempostext-medium-webfont.woff') format('woff'), url('fonts/tiempostext-medium-webfont.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		
+		.leaflet-popup-content-wrapper {
+		  background-color: rgba(239,239,239,0.9);
+		  color: #ee2431;
+		  font-family: 'solidoblack';
+		  font-size: 18px;
+		  width:200px;
+		}
+		
+		</style>
+		
+		
+	 
+	</head>
+	<body>
+		 <div id="leafmap"></div>
+		 
+		 <script src="js/leaflet-0/leaflet.js"></script>
+		 <script src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+	 	 <script type="text/javascript">
+		 
+		 //Map tile
+		 var layer = new L.StamenTileLayer("toner-background");
+		 var map = new L.Map("leafmap", {
+		     center: new L.LatLng(30,0),
+		     zoom: 2,
+			 zoomControl: false
+		 });
+		 map.addLayer(layer);
+		 
+		 //Markers
+		 var putin = L.circle([63.7825, 100.0195], 150000, {
+			 color: '#ee2431',
+			 fillColor: '#ee2431',
+			 fillOpacity: 0.9,
+			 stroke: 1
+		 }).addTo(map);
+		 
+		 putin.bindPopup("Vladimir Putin<br><a href='file:///Users/christopher.hickey/Desktop/CKFP/global-thinkers-2014.git/src/index.html#agitators/detail/putin'>View Profile</a>");
+		 
+		 map.touchZoom.disable();
+		 map.doubleClickZoom.disable();
+		 map.scrollWheelZoom.disable();
+
+		 
+		
+	 	 </script>
+	</body>
+</html>				

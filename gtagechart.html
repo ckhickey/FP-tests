@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <style type="text/css" media="screen">
+
+	@font-face {
+		font-family: 'solidoblack';
+		src: url('fonts/solido-black-webfont-webfont.eot');
+		src: url('fonts/solido-black-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('..fonts/solido-black-webfont-webfont.svg') format('svg'), url('fonts/solido-black-webfont-webfont.woff') format('woff'), url('fonts/solido-black-webfont-webfont.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+    </style>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Age Breakdown", "Percent", {role: 'annotation'} ],
+        ["20-35", 15, '20-35'],
+        ["36-45", 30, '36-45'],
+        ["46-55", 24, '46-55'],
+        ["56-65", 17, '56-65'],
+		["66+", 12, '66+']
+      ]);
+
+      
+
+      var options = {
+		annotations: {
+			//style: 'line'
+		},
+		backgroundColor: 'transparent',
+		colors: ['#fb4501'],
+		fontName: 'solidoblack', 
+		hAxis: {
+			title: 'AGE BREAKDOWN (%)',
+			titleTextStyle: {color: '#fff', italic:false},
+			textPosition: 'none'
+		},   
+		legend: { position: "none" },
+		vAxis: {
+			//format: 'percent',
+			gridlines: {count: 8},
+			maxValue: 35,
+			textStyle: {color: '#fff'}
+		}
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(data, options);
+  }
+  </script>
+</head>
+<body>
+<div id="columnchart_values" style="width: 100%; height: auto;"></div>
+</body>
+</html>

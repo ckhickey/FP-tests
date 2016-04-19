@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <style type="text/css" media="screen">
+
+	@font-face {
+		font-family: 'solidoblack';
+		src: url('fonts/solido-black-webfont-webfont.eot');
+		src: url('fonts/solido-black-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('..fonts/solido-black-webfont-webfont.svg') format('svg'), url('fonts/solido-black-webfont-webfont.woff') format('woff'), url('fonts/solido-black-webfont-webfont.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+    </style>
+	<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Gender', 'Percent'],
+          ['MALE',     60],
+          ['FEMALE',      61]
+        ]);
+
+        var options = {
+		  colors: ['#fb4501','#adadad'],
+		  backgroundColor: 'transparent',
+          pieHole: 0.4,
+		  pieSliceBorderColor: '#333',
+	      pieStartAngle: 30,	
+		  fontName: 'solidoblack',
+		  legend: {position: 'bottom', textStyle:{color: '#fff'}},	
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="donutchart" style="width: 100%; height: auto;"></div>
+  </body>
+</html>

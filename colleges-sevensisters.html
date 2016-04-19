@@ -1,0 +1,174 @@
+<html>
+<head>
+  <script src="list.js"></script>
+  <style type="text/css">
+
+    @font-face {
+      font-family: 'solido_medium';
+      src: url('fonts/solido-medium-webfont.eot');
+      src: url('fonts/solido-medium-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/solido-medium-webfont.svg') format('svg'), url('fonts/solido-medium-webfont.woff') format('woff'), url('fonts/solido-medium-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'solido_bold';
+      src: url('fonts/solido-bold-webfont.eot');
+      src: url('fonts/solido-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/solido-bold-webfont.svg') format('svg'), url('fonts/solido-bold-webfont.woff') format('woff'), url('fonts/solido-bold-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .list li {
+      font-family: 'solido_medium';
+    }
+
+    .size {
+      display:none;
+    }
+
+    tr, .list, input, .sort {
+      font-family: "solido_medium", sans-serif;
+    }
+    td {
+      padding:5px;
+      border:solid 1px #eee;
+    }
+
+    tr:hover{
+      color: #fff;
+      background-color: #000;
+    }
+
+    input {
+      border:solid 1px #ccc;
+      border-radius: 1px;
+      padding:7px 14px;
+      margin-bottom:10px
+    }
+    input:focus {
+      outline:none;
+      border-color:#aaa;
+    }
+    .sort {
+      padding:8px 30px;
+      border-radius: 1px;
+      border:none;
+      display:inline-block;
+      color:#fff;
+      text-decoration: none;
+      background-color: #eb2431;
+      height:30px;
+    }
+    .sort:hover {
+      text-decoration: none;
+      background-color:#B81C26;
+    }
+    .sort:focus {
+      outline:none;
+    }
+    .sort:after {
+      display:inline-block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      content:"";
+      position: relative;
+      top:-10px;
+      right:-5px;
+    }
+    .sort.asc:after {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #fff;
+      content:"";
+      position: relative;
+      top:4px;
+      right:-5px;
+    }
+    .sort.desc:after {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #fff;
+      content:"";
+      position: relative;
+      top:-4px;
+      right:-5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="users">
+    <input class="search" placeholder="Search" />
+    <button class="sort" data-sort="students">
+      F-1 visa totals
+    </button>
+    <button class="sort" data-sort="size">
+      vs. student body
+    </button>
+    <table>
+      <tr>
+        <td>Rank (by # of visas)
+        <td>School</td>
+        <td>Number of F-1 visas</td>
+      </tr>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        <tr>
+          <td class="rank">1</td>
+          <td class="name">Mount Holyoke College</td>
+          <td class="students">284</td>
+          <td class="size">2</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td class="name">Bryn Mawr College</td>
+          <td class="students">277</td>
+          <td class="size">1</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td class="name">Smith College</td>
+          <td class="students">241</td>
+          <td class="size">3</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="name">Wellesley College</td>
+          <td class="students">106</td>
+          <td class="size">4</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="name">Vassar College</td>
+          <td class="students">83</td>
+          <td class="size">5</td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td class="name">Barnard College</td>
+          <td class="students">71</td>
+          <td class="size">6</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <script>
+
+    var options = {
+      valueNames: [ 'name', 'students', 'size' ]
+    };
+
+    var userList = new List('users', options);
+
+  </script>
+</body>
+</html>
