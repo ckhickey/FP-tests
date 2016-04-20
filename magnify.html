@@ -1,22 +1,25 @@
 <html>
 <head>
-<link rel="stylesheet" href="/thdoan-magnify-20274c4/css/magnify.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="/thdoan-magnify-20274c4/js/jquery.magnify.js"></script>
+<link rel="stylesheet" href="magnify/dist/css/magnify.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="magnify/dist/js/jquery.magnify.js"></script>
 <!-- Optional mobile plugin for smartphones -->
-<script src="/thdoan-magnify-20274c4/js/jquery.magnify-mobile.js"></script>
+<script src="magnify/dist/js/jquery.magnify-mobile.js"></script>
 
+<script>
+jQuery(document).ready(function($) {
+  $('.zoom').magnify({
+    speed: 200
+  });
+});
+
+
+</script>
 
 </head>
 
 <body>
   <img src="https://foreignpolicymag.files.wordpress.com/2016/04/hk_16_foreignpol_kellymok_12_sw_v1-e1461014179573.jpg" class="zoom" data-magnify-src="https://foreignpolicymag.files.wordpress.com/2016/04/hk_16_foreignpol_kellymok_11_sw_v1-e1461014164232.jpg">
-
-  <script>
-  $(document).ready(function() {
-    $('.zoom').magnify();
-  });
-  </script>
 
 </body>
 </html>
